@@ -19,7 +19,6 @@ public class Form1 extends Activity {
         setContentView(R.layout.activity_form1);
 
         Spinner spinner =  findViewById(R.id.spinner);
-        // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.accounts_array,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);

@@ -8,4 +8,13 @@
 
     </string-array>
 
+    <string-array name="currency_array">
+        <item>INR</item>
+        <item>USD</item>
+        <item>OMR</item>
+        <item>EUR</item>
+        <item>AUD</item>
+    </string-array>
+
+
 </resources>
