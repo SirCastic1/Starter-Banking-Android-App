@@ -29,7 +29,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Welcome to Ajay's International Bank"
+        android:text="Welcome to An International Bank"
         android:textAppearance="@android:style/TextAppearance.Holo.DialogWindowTitle"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/view"
