@@ -23,20 +23,26 @@ public class Form1 extends Activity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-    }
-    public void openForm2(View view) {
-       /* EditText n=findViewById(R.id.name);
-        EditText adres=findViewById(R.id.editText3);
-        EditText Act=findViewById(R.id.editText3);
-        myDb.addCustomer(n.getText().toString(),adres.getText().toString(),Act.getText().toString());
-        */
 
-        Intent intent=new Intent(this,Form2.class);
-        EditText editText= findViewById(R.id.name);
-        String message=editText.getText().toString();
-        intent.putExtra("Name",message);
+    }
+
+        public void openForm2(View view) {
+
+            myDb=new CustomerDbHelper(this);
+
+            EditText n = findViewById(R.id.name);
+            EditText adres = findViewById(R.id.editText3);
+            EditText Act = findViewById(R.id.editText3);
+            myDb.addCustomer(n.getText().toString(), adres.getText().toString(), Act.getText().toString());
+
+
+        Intent intent = new Intent(this, Form2.class);
+        EditText editText = findViewById(R.id.name);
+        String message = editText.getText().toString();
+        intent.putExtra("Name", message);
         startActivity(intent);
 
     }
+
     }
 
