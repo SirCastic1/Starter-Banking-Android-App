@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AIB</string>
+
+    <string-array name="accounts_array">
+        <item>Savings Account</item>
+        <item>Checkings Account</item>
+        <item>Retirement Account</item>
+
+    </string-array>
+
+</resources>
