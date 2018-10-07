@@ -41,15 +41,15 @@ public class CustomerDbHelper extends SQLiteOpenHelper
         onCreate(sqLiteDatabase);
     }
 
-    public void addCustomer(String Name,String Address,String Account)
+    public void addCustomer(String nName,String aAddress,String aAccount)
     {
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
-        contentValues.put(CustomerContract.CustomerEntry.Name,Name);
-        contentValues.put(CustomerContract.CustomerEntry.Address,Address);
-        contentValues.put(CustomerContract.CustomerEntry.Account,Account);
+        contentValues.put(Name,nName);
+        contentValues.put(Address,aAddress);
+        contentValues.put(Account,aAccount);
 
-        db.insert(CustomerContract.CustomerEntry.TABLE_NAME,null,contentValues);
+        db.insert(TABLE_NAME,null,contentValues);
         Log.d("Database operations","Values Inserted");
 
 

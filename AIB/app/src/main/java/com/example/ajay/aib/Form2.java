@@ -15,7 +15,7 @@ public class Form2 extends Activity {
         String message=intent.getStringExtra("Name");
 
         TextView textView=findViewById(R.id.name);
-        textView.setText(message);
+        textView.setText("This account belongs to "+message);
 
 
     }
