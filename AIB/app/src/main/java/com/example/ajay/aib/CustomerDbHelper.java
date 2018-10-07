@@ -45,7 +45,6 @@ public class CustomerDbHelper extends SQLiteOpenHelper
 
 
         SQLiteDatabase db=this.getWritableDatabase();
-
         ContentValues contentValues=new ContentValues();
         contentValues.put(CustomerDbHelper.Name,nName);
         contentValues.put(CustomerDbHelper.Address,aAddress);

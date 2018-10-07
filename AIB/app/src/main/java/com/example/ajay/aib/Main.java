@@ -32,4 +32,9 @@ public class Main extends Activity {
         startActivity(intent);
     }
 
+    public void Frm2(View view)
+    {
+        Intent intent=new Intent(this,Form2.class);
+        startActivity(intent);
+    }
 }
