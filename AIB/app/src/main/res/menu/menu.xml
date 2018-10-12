@@ -3,20 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/app_bar_search"
-        android:actionViewClass="android.widget.SearchView"
-        android:icon="@drawable/ic_search_black_24dp"
-        android:title="Search"
-        app:showAsAction="ifRoom" />
+    <item android:title="Display all records"
+          android:id="@+id/i1"></item>
     <item
         android:title="Help"
         app:showAsAction="ifRoom" >
         <menu>
-            <item android:title="Report Bug"></item>
-            <item android:title="Check for Updates"></item>
+            <item android:title="Report Bug"
+                  android:id="@+id/i21"  ></item>
+            <item android:title="Check for Updates"
+                  android:id="@+id/i22"  ></item>
         </menu>
     </item>
     <item
-        android:title="Exit" />
+        android:title="Exit"
+        android:id="@+id/i3" />
 </menu>

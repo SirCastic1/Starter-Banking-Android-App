@@ -2,6 +2,7 @@ package com.example.ajay.aib;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -57,6 +58,12 @@ public class CustomerDbHelper extends SQLiteOpenHelper
 
 
 
+    }
+
+    public Cursor getAllData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("Select * from Customer_Table", null);
+        return res;
     }
 
 }
