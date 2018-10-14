@@ -39,7 +39,8 @@ public class Form1 extends Activity {
         Intent intent = new Intent(this, Form2.class);
         EditText editText = findViewById(R.id.name);
         String message = editText.getText().toString();
-        intent.putExtra("Name", message);
+        intent.putExtra("id ", message);
+        intent.putExtra("Form","1");
         startActivity(intent);
 
     }

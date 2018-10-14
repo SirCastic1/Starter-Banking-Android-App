@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class Main extends Activity {
@@ -87,9 +89,46 @@ public class Main extends Activity {
         startActivity(intent);
     }
 
-    public void Frm2(View view)
-    {
-        Intent intent=new Intent(this,Form2.class);
-        startActivity(intent);
+
+
+    public void Frm2(View view) {
+        EditText id1 = findViewById(R.id.editText);
+        String id = id1.getText().toString();
+
+        if(id.isEmpty())
+            id1.setError("Please enter a value");
+
+        else if(TextUtils.isDigitsOnly(id))
+        {
+            int i=Integer.parseInt(id);
+
+            Cursor crs=myDb.getId(i);
+            StringBuffer buffer=new StringBuffer();
+
+            if(crs.moveToNext()){
+                buffer.append("Id:"+crs.getString(0)+"\n");
+                buffer.append("Name:"+crs.getString(1)+"\n");
+                buffer.append("Address:"+crs.getString(2)+"\n");
+                buffer.append("Account type:"+crs.getString(3)+"\n");
+                buffer.append("Balance:"+crs.getString(4)+"\n\n");
+
+
+                Intent intent = new Intent(this, Form2.class);
+
+                String message = id;
+                intent.putExtra("id", message);
+                intent.putExtra("Form","0");
+
+                startActivity(intent);
+
+
+            }
+            else
+                id1.setError("Wrong Id try Again");
+
+        }
+
+
+
     }
 }

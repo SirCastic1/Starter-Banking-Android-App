@@ -60,9 +60,55 @@ public class CustomerDbHelper extends SQLiteOpenHelper
 
     }
 
+    public void update(int id1,int val,int bal)
+    {
+        bal=bal+val;
+
+
+
+
+
+
+        SQLiteDatabase db=this.getWritableDatabase();
+
+        ContentValues cv=new ContentValues();
+        cv.put(Balance,bal);
+
+        db.update(TABLE_NAME,cv,"Customer_id="+id1,null);
+
+
+    }
+
+    public Cursor getBalance(int id1)
+    {
+
+        SQLiteDatabase myDb=this.getWritableDatabase();
+
+        Cursor res=myDb.rawQuery("Select "+Balance+" from "+TABLE_NAME+" where "+id+"="+id1,null);
+
+
+        return res;
+    }
+
     public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("Select * from Customer_Table", null);
+        return res;
+    }
+
+    public Cursor getId(int actid)
+    {
+        SQLiteDatabase mydb=this.getWritableDatabase();
+        String[] columns={id,Account,Name,Address,Balance};
+        String[] idd={Integer.toString(actid)};
+        Cursor crs=mydb.query(TABLE_NAME,columns,"Customer_id=?",idd,null,null,null);
+        return crs;
+    }
+
+    public Cursor getLast()
+    {
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor res=db.rawQuery("Select seq from sqlite_sequence",null);
         return res;
     }
 
