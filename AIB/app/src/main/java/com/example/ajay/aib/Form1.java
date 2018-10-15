@@ -28,12 +28,16 @@ public class Form1 extends Activity {
 
         public void openForm2(View view) {
 
-            myDb=new CustomerDbHelper(this);
+        Spinner spin=findViewById(R.id.spinner);
+            String text = spin.getSelectedItem().toString();
+
+        myDb=new CustomerDbHelper(this);
+
 
             EditText n = findViewById(R.id.name);
             EditText adres = findViewById(R.id.editText3);
             EditText Act = findViewById(R.id.editText3);
-            myDb.addCustomer(n.getText().toString(), adres.getText().toString(), Act.getText().toString());
+            myDb.addCustomer(n.getText().toString(), adres.getText().toString(), text);
 
 
         Intent intent = new Intent(this, Form2.class);
